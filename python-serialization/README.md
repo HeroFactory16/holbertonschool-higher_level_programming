@@ -1,0 +1,1 @@
+This folder is about learning serialization through JSON, CSV and XML.

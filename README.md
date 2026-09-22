@@ -1,0 +1,1 @@
+This repository is about learning higher programming concepts than the ones seen in C.
