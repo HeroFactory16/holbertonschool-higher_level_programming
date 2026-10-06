@@ -40,5 +40,5 @@ if __name__ == "__main__":
 
     with Session() as session:
         for state in session.query(State).order_by(State.id).all():
-            if state.name[0] == "N" or state.name[0] == "n":
+            if state.name[0] == "N":
                 print("({}, '{}')".format(state.id, state.name))
