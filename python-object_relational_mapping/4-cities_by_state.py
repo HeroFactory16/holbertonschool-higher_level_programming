@@ -54,13 +54,13 @@ if __name__ == "__main__":
 
     with Session() as session:
         query = (
-            select(City, State)
-            .join(City, City.state_id == State.id)
+            select(City.id, City.name, State.name)
+            .join(State, City.state_id == State.id)
             .order_by(City.id)
         )
-        for city, state in session.execute(query):
+        for city_id, city_name, state_name in session.execute(query):
             print("({}, '{}', '{}')".format(
-                    city.id,
-                    city.name,
-                    state.name
+                    city_id,
+                    city_name,
+                    state_name
                     ))
