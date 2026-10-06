@@ -5,7 +5,7 @@ from the database passed as argument.
 Usage: ./script.py <mysql username> <mysql password> <database name>
 
 Connects to a MySQL server running on localhost:3306 and prints every
-row of the ``states`` table, sorted by id, as ``(id, 'name')``.
+row of the ``city`` table, sorted by id, as ``(id, 'name', 'state_name')``.
 """
 import sys
 
@@ -48,7 +48,6 @@ if __name__ == "__main__":
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
             sys.argv[1], sys.argv[2], sys.argv[3]
         ),
-        pool_pre_ping=True,
     )
     Session = sessionmaker(bind=db)
 
