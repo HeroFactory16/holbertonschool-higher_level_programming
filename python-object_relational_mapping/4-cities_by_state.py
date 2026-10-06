@@ -10,7 +10,7 @@ row of the ``states`` table, sorted by id, as ``(id, 'name')``.
 import sys
 
 from MySQLdb import *
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String, create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 if __name__ == "__main__":
@@ -53,6 +53,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=db)
 
     with Session() as session:
+        # session.execute(text("SELECT * FROM states"))
+
         query = (
             session.query(City, State)
             .join(City, City.state_id == State.id)
