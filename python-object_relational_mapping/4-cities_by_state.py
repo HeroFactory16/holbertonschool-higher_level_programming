@@ -53,8 +53,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=db)
 
     with Session() as session:
-        session.execute(text("SELECT * FROM states"))
-
         query = (
             session.query(City, State)
             .join(City, City.state_id == State.id)
