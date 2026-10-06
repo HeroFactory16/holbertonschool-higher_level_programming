@@ -1,0 +1,1 @@
+This folder is about working with MySQL and SQLAlchemy, and understanding relationship between datas stored in databases and object in-code.
