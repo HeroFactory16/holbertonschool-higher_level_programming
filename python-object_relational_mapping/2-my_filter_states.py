@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List all State objects whose name starts with the letter N
+"""List all State objects whose name matches argv[4]
 from the database passed as argument.
 
 Usage: ./script.py <mysql username> <mysql password> <database name>
