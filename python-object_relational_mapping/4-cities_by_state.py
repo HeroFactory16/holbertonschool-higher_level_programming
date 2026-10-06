@@ -53,7 +53,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=db)
 
     with Session() as session:
-        # session.execute(text("SELECT * FROM states"))
+        session.execute(text("SELECT * FROM states"))
 
         query = (
             session.query(City, State)
