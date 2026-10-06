@@ -40,5 +40,5 @@ if __name__ == "__main__":
 
     with Session() as session:
         for state in session.query(State).order_by(State.id).all():
-            if state.name[0] == sys.argv[4]:
+            if state.name == sys.argv[4]:
                 print("({}, '{}')".format(state.id, state.name))
