@@ -32,6 +32,6 @@ if __name__ == "__main__":
 
         result = session.execute(query).fetchone()
         if result == None:
-            result = ("Nothing",)
-
-        print(f"1: {result[0]}")
+            print("Nothing")
+        else:
+            print(f"1: {result[0]}")
