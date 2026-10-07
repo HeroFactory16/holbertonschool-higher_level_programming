@@ -11,6 +11,7 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """Map the ``states`` table to a Python class.
 
