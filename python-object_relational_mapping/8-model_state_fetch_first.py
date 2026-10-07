@@ -30,5 +30,8 @@ if __name__ == "__main__":
             .where(State.id == 1)
         )
 
-        result = session.execute(query)
-        print(f"1: {result.fetchone()[0]}")
+        result = session.execute(query).fetchone()
+        if result == None:
+            result = ("Nothing",)
+
+        print(f"1: {result[0]}")
