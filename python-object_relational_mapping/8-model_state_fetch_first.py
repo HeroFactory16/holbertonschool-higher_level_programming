@@ -30,5 +30,5 @@ if __name__ == "__main__":
             .where(State.id == 1)
         )
 
-        for state_name in session.execute(query):
-            print(f"1: {state_name[0]}")
+        result = session.execute(query)
+        print(f"1: {result.fetchone()[0]}")
