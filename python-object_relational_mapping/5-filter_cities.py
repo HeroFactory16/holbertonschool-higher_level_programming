@@ -12,14 +12,15 @@ if __name__ == "__main__":
         db=sys.argv[3],
     )
     cur = db.cursor()
-    cur.execute(
-        "SELECT cities.name "
+    stmt = ("SELECT cities.name "
         "FROM cities "
-        f"JOIN states ON state.name = {sys.argv[4]} "
+        "JOIN states ON states.name = %s "
         "AND cities.state_id = states.id "
-        "ORDER BY cities.id ASC"
-    )
-    for row in cur.fetchall():
-        print(row)
+        "ORDER BY cities.id ASC")
+
+    cur.execute(stmt, (sys.argv[4],))    
+    
+    print(", ".join(row[0] for row in cur.fetchall()))
+
     cur.close()
     db.close()
