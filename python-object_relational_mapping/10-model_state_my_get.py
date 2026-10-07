@@ -30,8 +30,8 @@ if __name__ == "__main__":
             .where(State.name == sys.argv[4])
         )
 
-        result = session.execute(query)
+        result = session.execute(query).fetchone()
         if result is None:
             print("Not found")
-        for state_id in result:
-            print(f"{state_id[0]}")
+        else:
+            print(f"{result[0]}")
