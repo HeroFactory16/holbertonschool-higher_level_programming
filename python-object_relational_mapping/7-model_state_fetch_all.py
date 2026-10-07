@@ -9,7 +9,7 @@ row of the ``states`` table, sorted by id, as ``id: name``.
 import sys
 from MySQLdb import *
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import State, Base
 
 if __name__ == "__main__":
