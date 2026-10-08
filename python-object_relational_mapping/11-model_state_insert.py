@@ -27,7 +27,7 @@ if __name__ == "__main__":
     with Session() as session:
         query = (
             insert(State)
-            .values(name = "Louisiana")
+            .values(name="Louisiana")
         )
 
         session.execute(query)
