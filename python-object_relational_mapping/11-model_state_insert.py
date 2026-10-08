@@ -25,18 +25,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=db)
 
     with Session() as session:
-        query = (
-            insert(State)
-            .values(name="Louisiana")
-        )
-
-        session.execute(query)
+        state = State(name="Louisiana")
+        session.add(state)
         session.commit()
-
-        query = (
-            select(State.id)
-            .where(State.name == "Louisiana")
-        )
-
-        result = session.execute(query).fetchone()
-        print(f"{result[0]}")
+        print(state.id)
