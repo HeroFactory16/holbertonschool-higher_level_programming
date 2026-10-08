@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List all State objects from the database passed as argument.
+"""Adds the State object 'Louisiana' to the database and prints its id.
 
 Usage: ./script.py <mysql username> <mysql password> <database name>
 
