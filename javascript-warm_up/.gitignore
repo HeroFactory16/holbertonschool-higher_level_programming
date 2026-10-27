@@ -1,1 +1,3 @@
 *index*.html
+*.json
+node_modules
