@@ -1,8 +1,8 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
+const process = require('process');
 
 function printXTimes () {
-  const x = parseInt(argv[2]);
+  const x = parseInt(process.argv[2]);
   if (!x) {
     console.log('Missing number of occurrences');
     return;
