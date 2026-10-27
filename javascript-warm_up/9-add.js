@@ -2,7 +2,7 @@
 const process = require('process');
 
 function add (a, b) {
-  const result = a + b;
+  const result = Number(a) + Number(b);
   console.log(Number(result));
 }
 
