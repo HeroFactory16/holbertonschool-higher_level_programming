@@ -1,0 +1,1 @@
+This folder is about learning the basis of JS in browser.
