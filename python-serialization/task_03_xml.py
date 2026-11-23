@@ -31,6 +31,8 @@ def from_element(element: ET.Element):
 
 
 def serialize_to_xml(data: dict, filename: str, root_tag: str = "root"):
+    if not data:
+        return None
     tree = ET.ElementTree(to_element(root_tag, data))
     ET.indent(tree, space="    ")
     tree.write(filename, encoding="utf-8", xml_declaration=True)
