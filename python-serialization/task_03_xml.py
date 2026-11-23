@@ -31,14 +31,15 @@ def from_element(element: ET.Element):
 
 
 def serialize_to_xml(data: dict, filename: str, root_tag: str = "root"):
-    if not data:
-        return None
     tree = ET.ElementTree(to_element(root_tag, data))
     tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 
 def deserialize_from_xml(filename: str):
     try:
-        return from_element(ET.parse(filename).getroot())
+        root = ET.parse(filename).getroot()
     except (FileNotFoundError, ET.ParseError):
         return None
+
+    result = from_element(root)
+    return {} if result == "" else result
