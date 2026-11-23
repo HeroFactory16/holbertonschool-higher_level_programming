@@ -3,7 +3,7 @@ import csv
 import json
 
 
-def csv_to_json(csv_filename: str):
+def convert_csv_to_json(csv_filename: str):
     try:
         with open(csv_filename, "r", encoding="utf-8", newline="") as csv_file:
             rows = list(csv.DictReader(csv_file))
