@@ -3,7 +3,7 @@ import pickle
 
 
 class CustomObject:
-    def __init__(self, name:str, age:int, is_student:bool):
+    def __init__(self, name: str, age: int, is_student: bool):
         self.name = name
         self.age = age
         self.is_student = is_student
@@ -12,7 +12,7 @@ class CustomObject:
         print(f"Name: {self.name}\nAge: {self.age}" +
               f"\nIs Student: {self.is_student}")
 
-    def serialize(self, filename:str):
+    def serialize(self, filename: str):
         with open(file=filename, mode="wb") as file:
             pickle.dump(obj=self, file=file)
 
