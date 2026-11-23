@@ -34,9 +34,11 @@ def serialize_to_xml(data: dict, filename: str, root_tag: str = "root"):
     if not data:
         return None
     tree = ET.ElementTree(to_element(root_tag, data))
-    ET.indent(tree, space="    ")
     tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 
 def deserialize_from_xml(filename: str):
-    return from_element(ET.parse(filename).getroot())
+    try:
+        return from_element(ET.parse(filename).getroot())
+    except FileNotFoundError:
+        return None
