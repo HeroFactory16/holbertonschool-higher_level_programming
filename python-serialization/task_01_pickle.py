@@ -13,13 +13,13 @@ class CustomObject:
               f"\nIs Student: {self.is_student}")
 
     def serialize(self, filename:str):
-        with open(file=filename, mode="w", encoding="utf-8") as file:
+        with open(file=filename, mode="wb") as file:
             pickle.dump(obj=self, file=file)
 
     @classmethod
     def deserialize(cls, filename):
         try:
-            with open(file=filename, mode="r", encoding="utf-8") as file:
+            with open(file=filename, mode="rb") as file:
                 return pickle.load(file=file)
         except FileNotFoundError:
-            return
+            return None
