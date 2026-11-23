@@ -40,5 +40,5 @@ def serialize_to_xml(data: dict, filename: str, root_tag: str = "root"):
 def deserialize_from_xml(filename: str):
     try:
         return from_element(ET.parse(filename).getroot())
-    except FileNotFoundError:
+    except (FileNotFoundError, ET.ParseError):
         return None
