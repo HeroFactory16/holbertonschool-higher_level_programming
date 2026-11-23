@@ -21,5 +21,5 @@ class CustomObject:
         try:
             with open(file=filename, mode="rb") as file:
                 return pickle.load(file=file)
-        except FileNotFoundError:
+        except:
             return None
