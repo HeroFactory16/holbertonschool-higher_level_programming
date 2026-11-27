@@ -34,7 +34,7 @@ class my_server(BaseHTTPRequestHandler):
         elif self.path == "/info":
             self._send_json({"version": "1.0", "description": "A simple API built with http.server"})
         else:
-            self._send_json({"error": "Endpoint not found"}, status=404)
+            self._send_json({"status": "Endpoint not found"}, status=404)
 
 if __name__ == "__main__":
     server = HTTPServer(("127.0.0.1", 8000), my_server)
